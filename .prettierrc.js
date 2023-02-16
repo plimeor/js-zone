@@ -5,5 +5,6 @@ module.exports = {
   singleQuote: true,
   arrowParens: 'avoid',
   trailingComma: 'none',
-  semi: false
+  semi: false,
+  plugins: ['./common/autoinstallers/rush-prettier/node_modules/prettier-plugin-packagejson']
 }
