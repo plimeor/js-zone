@@ -1,0 +1,9 @@
+{
+  "name": "@plimeor/tsconfig",
+  "version": "1.0.0",
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "5.0.0-beta"
+  }
+}
