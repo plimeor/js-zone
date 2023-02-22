@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   typescript: 5.0.0-beta
 
-devDependencies:
+dependencies:
   typescript: 5.0.0-beta
 
 packages:
@@ -12,4 +12,4 @@ packages:
     resolution: {integrity: sha512-+SSabbSXG5mtF+QGdV9uXXt9Saq1cSyI6hSG7znhaLoquleJpnmfkwSxFngK9c2fWWi1W/263TuzXQOsIcdjjA==}
     engines: {node: '>=4.2.0'}
     hasBin: true
-    dev: true
+    dev: false

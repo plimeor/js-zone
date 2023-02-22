@@ -5,44 +5,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
 
-  /**
-   * (Required) This specifies the version of the Rush engine to be used in this repo.
-   * Rush's "version selector" feature ensures that the globally installed tool will
-   * behave like this release, regardless of which version is installed globally.
-   *
-   * The common/scripts/install-run-rush.js automation script also uses this version.
-   *
-   * NOTE: If you upgrade to a new major version of Rush, you should replace the "v5"
-   * path segment in the "$schema" field for all your Rush config files.  This will ensure
-   * correct error-underlining and tab-completion for editors such as VS Code.
-   */
   "rushVersion": "5.92.0",
 
-  /**
-   * The next field selects which package manager should be installed and determines its version.
-   * Rush installs its own local copy of the package manager to ensure that your build process
-   * is fully isolated from whatever tools are present in the local environment.
-   *
-   * Specify one of: "pnpmVersion", "npmVersion", or "yarnVersion".  See the Rush documentation
-   * for details about these alternatives.
-   */
   "pnpmVersion": "7.27.0",
 
-  // "npmVersion": "6.14.15",
-  // "yarnVersion": "1.9.4",
-
-  /**
-   * Older releases of the Node.js engine may be missing features required by your system.
-   * Other releases may have bugs.  In particular, the "latest" version will not be a
-   * Long Term Support (LTS) version and is likely to have regressions.
-   *
-   * Specify a SemVer range to ensure developers use a Node.js version that is appropriate
-   * for your repo.
-   *
-   * LTS schedule: https://nodejs.org/en/about/releases/
-   * LTS versions: https://nodejs.org/en/download/releases/
-   */
-  "nodeSupportedVersionRange": ">=12.13.0 <13.0.0 || >=14.15.0 <15.0.0 || >=16.13.0 <17.0.0",
+  "nodeSupportedVersionRange": ">=14.15.0 <15.0.0 || >=16.13.0 <17.0.0",
 
   /**
    * If the version check above fails, Rush will display a message showing the current
@@ -65,17 +32,6 @@
    */
   // "suppressNodeLtsWarning": false,
 
-  /**
-   * If you would like the version specifiers for your dependencies to be consistent, then
-   * uncomment this line. This is effectively similar to running "rush check" before any
-   * of the following commands:
-   *
-   *   rush install, rush update, rush link, rush version, rush publish
-   *
-   * In some cases you may want this turned on, but need to allow certain packages to use a different
-   * version. In those cases, you will need to add an entry to the "allowedAlternativeVersions"
-   * section of the common-versions.json.
-   */
   "ensureConsistentVersions": true,
 
   /**
@@ -332,10 +288,6 @@
    * 3. It's useful to have a centralized inventory of all projects and their important metadata.
    */
   "projects": [
-    {
-      packageName: "@plimeor/tsconfig",
-      projectFolder: "tools/tsconfig"
-    }
     // {
     //   /**
     //    * The NPM package name of the project (must match package.json)
