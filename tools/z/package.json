@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@rushstack/ts-command-line": "~4.13.2",
-    "tslib": "~2.5.0",
     "tsup": "~6.6.3"
   },
   "devDependencies": {
