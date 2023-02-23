@@ -6,7 +6,7 @@
   "license": "ISC",
   "author": "",
   "bin": {
-    "z": "./dist/index.js"
+    "z": "z"
   },
   "scripts": {
     "build": "tsup src/index.ts --format cjs --target es2022"
