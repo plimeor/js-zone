@@ -36,3 +36,6 @@ export const fromNullable = <A>(a: A | null): Option<NonNullable<A>> => (a === n
 export const toNullable: <A>(a: Option<A>) => A | null = a => (isSome(a) ? a.value : null)
 
 export const toUndefined: <A>(a: Option<A>) => A | undefined = a => (isSome(a) ? a.value : undefined)
+
+export const fromUndefined = <A>(a: A | undefined): Option<NonNullable<A>> =>
+  a === undefined ? none : some(a as NonNullable<A>)
