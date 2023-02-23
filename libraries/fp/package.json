@@ -2,15 +2,15 @@
   "name": "@plimeor/fp",
   "version": "1.0.0",
   "private": true,
-  "sideEffects": false,
-  "type": "module",
-  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc --watch"
+    "build": "z build --dts",
+    "watch": "z build --dts --watch"
   },
   "devDependencies": {
+    "@plimeor/z": "workspace:*",
     "typescript": "5.0.0-beta"
   }
 }

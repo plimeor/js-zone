@@ -1,0 +1,23 @@
+{
+  "name": "@plimeor/z",
+  "version": "1.0.0",
+  "private": true,
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "bin": {
+    "z": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs --target es2022"
+  },
+  "dependencies": {
+    "@rushstack/ts-command-line": "~4.13.2",
+    "tslib": "~2.5.0",
+    "tsup": "~6.6.3"
+  },
+  "devDependencies": {
+    "@types/node": "~18.14.1",
+    "typescript": "5.0.0-beta"
+  }
+}
