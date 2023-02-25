@@ -24,8 +24,8 @@
       "name": "release",
       "commandKind": "global",
       "summary": "Publish NPM packages",
-      "safeForSimultaneousRushProcesses": false,
-      shellCommand: "rush publish --apply --publish --set-access-level public"
+      "safeForSimultaneousRushProcesses": true,
+      "shellCommand": "rush publish --apply --publish --include-all"
     }
     // {
     //   /**
