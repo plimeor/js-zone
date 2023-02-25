@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@plimeor/fp",
+      "comment": "Add Option type",
+      "type": "minor"
+    }
+  ],
+  "packageName": "@plimeor/fp"
+}

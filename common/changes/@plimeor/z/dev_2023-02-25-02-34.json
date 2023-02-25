@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@plimeor/z",
+      "comment": "Add Build action",
+      "type": "minor"
+    }
+  ],
+  "packageName": "@plimeor/z"
+}

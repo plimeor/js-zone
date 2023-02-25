@@ -1,7 +1,8 @@
 {
   "name": "@plimeor/fp",
   "version": "1.0.0",
-  "private": true,
+  "license": "MIT",
+  "author": "plimeor@gmail.com",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",

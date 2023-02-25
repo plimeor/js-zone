@@ -19,6 +19,13 @@
       "autoinstallerName": "rush-prettier",
       // This will invoke common/autoinstallers/rush-prettier/node_modules/.bin/pretty-quick
       "shellCommand": "pretty-quick --staged"
+    },
+    {
+      "name": "release",
+      "commandKind": "global",
+      "summary": "Publish NPM packages",
+      "safeForSimultaneousRushProcesses": false,
+      shellCommand: "rush publish --apply --publish --set-access-level public"
     }
     // {
     //   /**

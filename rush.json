@@ -286,11 +286,13 @@
   "projects": [
     {
       "packageName": "@plimeor/fp",
-      "projectFolder": "libraries/fp"
+      "projectFolder": "libraries/fp",
+      "shouldPublish": true
     },
     {
       "packageName": "@plimeor/z",
-      "projectFolder": "tools/z"
+      "projectFolder": "tools/z",
+      "shouldPublish": true
     }
     // {
     //   /**
