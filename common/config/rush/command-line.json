@@ -5,12 +5,50 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/command-line.schema.json",
 
+  "phases": [
+    {
+      "name": "_phase:build",
+      "dependencies": {
+        "upstream": ["_phase:build"]
+      },
+      "ignoreMissingScript": true,
+      "allowWarningsOnSuccess": false
+    },
+    {
+      "name": "_phase:test",
+      "dependencies": {
+        "self": ["_phase:build"]
+      },
+      "ignoreMissingScript": true,
+      "allowWarningsOnSuccess": false
+    }
+   ],
+
   /**
    * Custom "commands" introduce new verbs for the command-line.  To see the help for these
    * example commands, try "rush --help", "rush my-bulk-command --help", or
    * "rush my-global-command --help".
    */
   "commands": [
+    {
+      "commandKind": "phased",
+      "name": "build",
+      "phases": ["_phase:build"],
+      "enableParallelism": true,
+      "incremental": true,
+      "watchOptions": {
+        "alwaysWatch": false,
+        "watchPhases": ["_phase:build"]
+      }
+    },
+    {
+      "commandKind": "phased",
+      "name": "test",
+      "summary": "Build and test all projects.",
+      "phases": ["_phase:build", "_phase:test"],
+      "enableParallelism": true,
+      "incremental": true
+    },
     {
       "name": "prettier",
       "commandKind": "global",

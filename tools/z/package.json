@@ -7,7 +7,7 @@
     "z": "z"
   },
   "scripts": {
-    "build": "tsup src/index.ts --format cjs --target es2022"
+    "_phase:build": "tsup src/index.ts --format cjs --target es2022"
   },
   "dependencies": {
     "@rushstack/ts-command-line": "~4.13.2",

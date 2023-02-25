@@ -34,29 +34,6 @@
 
   "ensureConsistentVersions": true,
 
-  /**
-   * Large monorepos can become intimidating for newcomers if project folder paths don't follow
-   * a consistent and recognizable pattern.  When the system allows nested folder trees,
-   * we've found that teams will often use subfolders to create islands that isolate
-   * their work from others ("shipping the org").  This hinders collaboration and code sharing.
-   *
-   * The Rush developers recommend a "category folder" model, where buildable project folders
-   * must always be exactly two levels below the repo root.  The parent folder acts as the category.
-   * This provides a basic facility for grouping related projects (e.g. "apps", "libraries",
-   * "tools", "prototypes") while still encouraging teams to organize their projects into
-   * a unified taxonomy.  Limiting to 2 levels seems very restrictive at first, but if you have
-   * 20 categories and 20 projects in each category, this scheme can easily accommodate hundreds
-   * of projects.  In practice, you will find that the folder hierarchy needs to be rebalanced
-   * occasionally, but if that's painful, it's a warning sign that your development style may
-   * discourage refactoring.  Reorganizing the categories should be an enlightening discussion
-   * that brings people together, and maybe also identifies poor coding practices (e.g. file
-   * references that reach into other project's folders without using Node.js module resolution).
-   *
-   * The defaults are projectFolderMinDepth=1 and projectFolderMaxDepth=2.
-   *
-   * To remove these restrictions, you could set projectFolderMinDepth=1
-   * and set projectFolderMaxDepth to a large number.
-   */
   "projectFolderMinDepth": 2,
   "projectFolderMaxDepth": 3,
 
@@ -160,34 +137,9 @@
   },
 
   "repository": {
-    /**
-     * The URL of this Git repository, used by "rush change" to determine the base branch for your PR.
-     *
-     * The "rush change" command needs to determine which files are affected by your PR diff.
-     * If you merged or cherry-picked commits from the main branch into your PR branch, those commits
-     * should be excluded from this diff (since they belong to some other PR).  In order to do that,
-     * Rush needs to know where to find the base branch for your PR.  This information cannot be
-     * determined from Git alone, since the "pull request" feature is not a Git concept.  Ideally
-     * Rush would use a vendor-specific protocol to query the information from GitHub, Azure DevOps, etc.
-     * But to keep things simple, "rush change" simply assumes that your PR is against the "main" branch
-     * of the Git remote indicated by the repository.url setting in rush.json.  If you are working in
-     * a GitHub "fork" of the real repo, this setting will be different from the repository URL of your
-     * your PR branch, and in this situation "rush change" will also automatically invoke "git fetch"
-     * to retrieve the latest activity for the remote main branch.
-     */
-    "url": "https://github.com/plimeor/zone"
-
-    /**
-     * The default branch name. This tells "rush change" which remote branch to compare against.
-     * The default value is "main"
-     */
-    // "defaultBranch": "main",
-
-    /**
-     * The default remote. This tells "rush change" which remote to compare against if the remote URL is
-     * not set or if a remote matching the provided remote URL is not found.
-     */
-    // "defaultRemote": "origin"
+    "url": "https://github.com/plimeor/zone",
+    "defaultBranch": "main",
+    "defaultRemote": "origin"
   },
 
   /**
@@ -248,22 +200,7 @@
     // }
   ],
 
-  /**
-   * Rush can collect anonymous telemetry about everyday developer activity such as
-   * success/failure of installs, builds, and other operations.  You can use this to identify
-   * problems with your toolchain or Rush itself.  THIS TELEMETRY IS NOT SHARED WITH MICROSOFT.
-   * It is written into JSON files in the common/temp folder.  It's up to you to write scripts
-   * that read these JSON files and do something with them.  These scripts are typically registered
-   * in the "eventHooks" section.
-   */
-  // "telemetryEnabled": false,
-
-  /**
-   * Allows creation of hotfix changes. This feature is experimental so it is disabled by default.
-   * If this is set, 'rush change' only allows a 'hotfix' change type to be specified. This change type
-   * will be used when publishing subsequent changes from the monorepo.
-   */
-  // "hotfixChangeEnabled": false,
+  "telemetryEnabled": false,
 
   /**
    * This is an optional, but recommended, list of allowed tags that can be applied to Rush projects
@@ -285,13 +222,13 @@
    */
   "projects": [
     {
-      "packageName": "@plimeor/fp",
-      "projectFolder": "libraries/fp",
+      "packageName": "@plimeor/z",
+      "projectFolder": "tools/z",
       "shouldPublish": true
     },
     {
-      "packageName": "@plimeor/z",
-      "projectFolder": "tools/z",
+      "packageName": "@plimeor/fp",
+      "projectFolder": "libraries/fp",
       "shouldPublish": true
     }
     // {
@@ -377,19 +314,5 @@
     //    */
     //   // "tags": [ "1.0.0-release", "frontend-team" ]
     // },
-    //
-    // {
-    //   "packageName": "my-controls",
-    //   "projectFolder": "libraries/my-controls",
-    //   "reviewCategory": "production",
-    //   "tags": [ "frontend-team" ]
-    // },
-    //
-    // {
-    //   "packageName": "my-toolchain",
-    //   "projectFolder": "tools/my-toolchain",
-    //   "reviewCategory": "tools",
-    //   "tags": [ "tools" ]
-    // }
   ]
 }

@@ -7,8 +7,7 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "z build --dts",
-    "watch": "z build --dts --watch"
+    "_phase:build": "z build --dts"
   },
   "devDependencies": {
     "@plimeor/z": "workspace:*",
