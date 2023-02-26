@@ -28,14 +28,16 @@ export const isSome = <T>(value: Option<T>): value is Some<T> => value._tag === 
 
 export const isNone = <T>(value: Option<T>): value is None => value._tag === OptionTag.None
 
-export const map: <X, Y>(fn: (x: X) => Y) => (x: Option<X>) => Option<Y> = fn => x =>
-  isNone(x) ? none : some(fn(x.value))
+export const map: <X, Y>(transformer: (x: X) => Y) => (x: Option<X>) => Option<Y> = transformer => x =>
+  isNone(x) ? none : some(transformer(x.value))
 
-export const fromNullable = <A>(a: A | null): Option<NonNullable<A>> => (a === null ? none : some(a as NonNullable<A>))
+export const fromNullable = <T>(value: T | null): Option<NonNullable<T>> =>
+  value === null ? none : some(value as NonNullable<T>)
 
-export const toNullable: <A>(a: Option<A>) => A | null = a => (isSome(a) ? a.value : null)
+// eslint-disable-next-line unicorn/no-null
+export const toNullable = <T>(value: Option<T>): T | null => (isSome(value) ? value.value : null)
 
-export const toUndefined: <A>(a: Option<A>) => A | undefined = a => (isSome(a) ? a.value : undefined)
+export const toUndefined = <T>(value: Option<T>): T | undefined => (isSome(value) ? value.value : undefined)
 
-export const fromUndefined = <A>(a: A | undefined): Option<NonNullable<A>> =>
-  a === undefined ? none : some(a as NonNullable<A>)
+export const fromUndefined = <T>(value: T | undefined): Option<NonNullable<T>> =>
+  value === undefined ? none : some(value as NonNullable<T>)
