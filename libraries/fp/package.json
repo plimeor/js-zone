@@ -7,9 +7,11 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "_phase:build": "z build --dts"
+    "_phase:build": "rushx build",
+    "build": "z build --dts"
   },
   "devDependencies": {
+    "@plimeor/heft-rig": "workspace:*",
     "@plimeor/z": "workspace:*",
     "typescript": "5.0.0-beta"
   }

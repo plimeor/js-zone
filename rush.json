@@ -222,9 +222,12 @@
    */
   "projects": [
     {
+      "packageName": "@plimeor/heft-rig",
+      "projectFolder": "internals/heft-rig"
+    },
+    {
       "packageName": "@plimeor/z",
-      "projectFolder": "tools/z",
-      "shouldPublish": true
+      "projectFolder": "internals/z"
     },
     {
       "packageName": "@plimeor/fp",

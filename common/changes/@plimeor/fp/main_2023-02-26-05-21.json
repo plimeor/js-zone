@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@plimeor/fp",
+      "comment": "use rig packages",
+      "type": "none"
+    }
+  ],
+  "packageName": "@plimeor/fp"
+}

@@ -1,19 +1,22 @@
 {
   "name": "@plimeor/z",
-  "version": "1.1.0",
+  "version": "1.0.0",
+  "private": true,
   "license": "MIT",
   "author": "plimeor@gmail.com",
   "bin": {
     "z": "z"
   },
   "scripts": {
-    "_phase:build": "tsup src/index.ts --format cjs --target es2022"
+    "_phase:build": "rushx build",
+    "build": "tsup src/index.ts --format cjs --target es2022"
   },
   "dependencies": {
     "@rushstack/ts-command-line": "~4.13.2",
     "tsup": "~6.6.3"
   },
   "devDependencies": {
+    "@plimeor/heft-rig": "workspace:*",
     "@types/node": "~18.14.1",
     "typescript": "5.0.0-beta"
   }

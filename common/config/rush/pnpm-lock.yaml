@@ -5,16 +5,15 @@ importers:
   .:
     specifiers: {}
 
-  ../../libraries/fp:
+  ../../internals/heft-rig:
     specifiers:
-      '@plimeor/z': workspace:*
       typescript: 5.0.0-beta
     devDependencies:
-      '@plimeor/z': link:../../tools/z
       typescript: 5.0.0-beta
 
-  ../../tools/z:
+  ../../internals/z:
     specifiers:
+      '@plimeor/heft-rig': workspace:*
       '@rushstack/ts-command-line': ~4.13.2
       '@types/node': ~18.14.1
       tsup: ~6.6.3
@@ -23,7 +22,18 @@ importers:
       '@rushstack/ts-command-line': 4.13.2
       tsup: 6.6.3_typescript@5.0.0-beta
     devDependencies:
+      '@plimeor/heft-rig': link:../heft-rig
       '@types/node': 18.14.1
+      typescript: 5.0.0-beta
+
+  ../../libraries/fp:
+    specifiers:
+      '@plimeor/heft-rig': workspace:*
+      '@plimeor/z': workspace:*
+      typescript: 5.0.0-beta
+    devDependencies:
+      '@plimeor/heft-rig': link:../../internals/heft-rig
+      '@plimeor/z': link:../../internals/z
       typescript: 5.0.0-beta
 
 packages:
