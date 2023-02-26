@@ -9,14 +9,19 @@
   },
   "scripts": {
     "_phase:build": "rushx build",
-    "build": "tsup src/index.ts --format cjs --target es2022"
+    "build": "tsup src/index.ts --format cjs --target es2022",
+    "lint": "./z lint"
   },
   "dependencies": {
     "@rushstack/ts-command-line": "~4.13.2",
+    "eslint": "~8.34.0",
+    "eslint-formatter-pretty": "~4.1.0",
+    "tslib": "~2.5.0",
     "tsup": "~6.6.3"
   },
   "devDependencies": {
     "@plimeor/heft-rig": "workspace:*",
+    "@types/eslint": "~8.21.1",
     "@types/node": "~18.14.1",
     "typescript": "5.0.0-beta"
   }

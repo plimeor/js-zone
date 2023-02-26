@@ -42,6 +42,15 @@
       }
     },
     {
+      "commandKind": "bulk",
+      "name": "lint",
+      "summary": "Lint all projects.",
+      "description": "This command invokes ESLint to lint all projects.",
+      "enableParallelism": true,
+      "ignoreMissingScript": true,
+      "safeForSimultaneousRushProcesses": true
+    },
+    {
       "commandKind": "phased",
       "name": "test",
       "summary": "Build and test all projects.",

@@ -1,5 +1,6 @@
 import { CommandLineParser } from '@rushstack/ts-command-line'
 import { BuildAction } from './build'
+import { LintAction } from './lint'
 
 export class ZoneCommand extends CommandLineParser {
   public constructor() {
@@ -9,6 +10,7 @@ export class ZoneCommand extends CommandLineParser {
     })
 
     this.addAction(new BuildAction())
+    this.addAction(new LintAction())
   }
 }
 

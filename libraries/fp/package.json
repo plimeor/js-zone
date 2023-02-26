@@ -8,7 +8,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "_phase:build": "rushx build",
-    "build": "z build --dts"
+    "build": "z build --dts",
+    "lint": "z lint"
   },
   "devDependencies": {
     "@plimeor/heft-rig": "workspace:*",
