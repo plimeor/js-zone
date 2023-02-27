@@ -1,0 +1,24 @@
+{
+  "name": "@plimeor/dotfiles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "dotfiles": "dotfiles"
+  },
+  "files": [
+    "dotfiles",
+    "dist"
+  ],
+  "scripts": {
+    "_phase:build": "z build"
+  },
+  "dependencies": {
+    "@rushstack/ts-command-line": "~4.13.2"
+  },
+  "devDependencies": {
+    "@plimeor/fp": "workspace:*",
+    "@types/node": "~18.14.1",
+    "typescript": "5.0.0-beta"
+  }
+}
