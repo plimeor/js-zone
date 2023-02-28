@@ -14,7 +14,11 @@ export class LintAction extends CommandLineAction {
   protected override async onExecute(): Promise<void> {
     const eslint = new ESLint({
       useEslintrc: true,
-      fix: true
+      fix: true,
+      cache: true,
+      // doesn't need hash in filename, Rush will handle it
+      cacheLocation: '.eslintcache/cache.json',
+      cacheStrategy: 'content'
     })
     const results = await eslint.lintFiles('src/**/*')
     const meta = await eslint.getRulesMetaForResults(results)

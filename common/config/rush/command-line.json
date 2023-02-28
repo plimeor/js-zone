@@ -48,6 +48,7 @@
       "description": "This command invokes ESLint to lint all projects.",
       "enableParallelism": true,
       "ignoreMissingScript": true,
+      "ignoreDependencyOrder": true,
       "safeForSimultaneousRushProcesses": true
     },
     {

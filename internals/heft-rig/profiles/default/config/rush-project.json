@@ -5,6 +5,10 @@
     {
       "operationName": "_phase:build",
       "outputFolderNames": ["dist", "lib"]
+    },
+    {
+      "operationName": "lint",
+      "outputFolderNames": [".eslintcache"]
     }
   ]
 }
