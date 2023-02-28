@@ -1,5 +1,5 @@
 {
-  "extends": "@plimeor/heft-rig/tsconfig.json",
+  "extends": "@internals/heft-rig/tsconfig.json",
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist"

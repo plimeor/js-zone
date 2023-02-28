@@ -21,7 +21,7 @@ importers:
 
   ../../internals/z:
     specifiers:
-      '@plimeor/heft-rig': workspace:*
+      '@internals/heft-rig': workspace:*
       '@rushstack/ts-command-line': ~4.13.2
       '@types/eslint': ~8.21.1
       '@types/node': ~18.14.1
@@ -37,19 +37,19 @@ importers:
       tslib: 2.5.0
       tsup: 6.6.3_typescript@5.0.0-beta
     devDependencies:
-      '@plimeor/heft-rig': link:../heft-rig
+      '@internals/heft-rig': link:../heft-rig
       '@types/eslint': 8.21.1
       '@types/node': 18.14.1
       typescript: 5.0.0-beta
 
   ../../libraries/fp:
     specifiers:
-      '@plimeor/heft-rig': workspace:*
-      '@plimeor/z': workspace:*
+      '@internals/heft-rig': workspace:*
+      '@internals/z': workspace:*
       typescript: 5.0.0-beta
     devDependencies:
-      '@plimeor/heft-rig': link:../../internals/heft-rig
-      '@plimeor/z': link:../../internals/z
+      '@internals/heft-rig': link:../../internals/heft-rig
+      '@internals/z': link:../../internals/z
       typescript: 5.0.0-beta
 
 packages:

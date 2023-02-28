@@ -13,7 +13,7 @@
         ],
         "dependency": [
           {
-            "comment": "Updating dependency \"@plimeor/z\" to `1.1.0`"
+            "comment": "Updating dependency \"@internals/z\" to `1.1.0`"
           }
         ]
       }

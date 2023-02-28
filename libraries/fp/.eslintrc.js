@@ -1,3 +1,3 @@
 module.exports = {
-  extends: require.resolve('@plimeor/heft-rig/.eslintrc.js')
+  extends: require.resolve('@internals/heft-rig/.eslintrc.js')
 }

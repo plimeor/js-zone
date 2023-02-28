@@ -1,5 +1,5 @@
 {
-  "name": "@plimeor/heft-rig",
+  "name": "@internals/heft-rig",
   "version": "1.0.0",
   "private": true,
   "devDependencies": {

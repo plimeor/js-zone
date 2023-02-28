@@ -1,5 +1,5 @@
 {
-  "name": "@plimeor/z",
+  "name": "@internals/z",
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
@@ -20,7 +20,7 @@
     "tsup": "~6.6.3"
   },
   "devDependencies": {
-    "@plimeor/heft-rig": "workspace:*",
+    "@internals/heft-rig": "workspace:*",
     "@types/eslint": "~8.21.1",
     "@types/node": "~18.14.1",
     "typescript": "5.0.0-beta"
