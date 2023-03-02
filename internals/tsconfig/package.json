@@ -1,0 +1,9 @@
+{
+  "name": "@internals/tsconfig",
+  "version": "1.0.0",
+  "private": true,
+  "main": "tsconfig.json",
+  "dependencies": {
+    "typescript": "5.0.0-beta"
+  }
+}

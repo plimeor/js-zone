@@ -222,6 +222,14 @@
    */
   "projects": [
     {
+      "packageName": "@internals/eslint-config",
+      "projectFolder": "internals/eslint-config"
+    },
+    {
+      "packageName": "@internals/tsconfig",
+      "projectFolder": "internals/tsconfig"
+    },
+    {
       "packageName": "@internals/heft-rig",
       "projectFolder": "internals/heft-rig"
     },

@@ -1,5 +1,5 @@
 {
-  "extends": "@internals/heft-rig/tsconfig.json",
+  "extends": "@internals/tsconfig",
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist"

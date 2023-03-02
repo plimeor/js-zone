@@ -21,7 +21,9 @@
     "tsup": "~6.6.3"
   },
   "devDependencies": {
+    "@internals/eslint-config": "workspace:*",
     "@internals/heft-rig": "workspace:*",
+    "@internals/tsconfig": "workspace:*",
     "@types/eslint": "~8.21.1",
     "@types/node": "~18.14.1",
     "typescript": "5.0.0-beta"
