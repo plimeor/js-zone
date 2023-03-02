@@ -228,11 +228,6 @@
     {
       "packageName": "@internals/z",
       "projectFolder": "internals/z"
-    },
-    {
-      "packageName": "@plimeor/fp",
-      "projectFolder": "libraries/fp",
-      "shouldPublish": true
     }
     // {
     //   /**

@@ -32,7 +32,6 @@ importers:
       '@types/node': ~18.14.1
       eslint: ~8.34.0
       eslint-formatter-pretty: ~4.1.0
-      tslib: ~2.5.0
       tsup: ~6.6.3
       typescript: 5.0.0-beta
     dependencies:
@@ -40,22 +39,11 @@ importers:
       '@rushstack/ts-command-line': 4.13.2
       eslint: 8.34.0
       eslint-formatter-pretty: 4.1.0
-      tslib: 2.5.0
       tsup: 6.6.3_typescript@5.0.0-beta
     devDependencies:
       '@internals/heft-rig': link:../heft-rig
       '@types/eslint': 8.21.1
       '@types/node': 18.14.1
-      typescript: 5.0.0-beta
-
-  ../../libraries/fp:
-    specifiers:
-      '@internals/heft-rig': workspace:*
-      '@internals/z': workspace:*
-      typescript: 5.0.0-beta
-    devDependencies:
-      '@internals/heft-rig': link:../../internals/heft-rig
-      '@internals/z': link:../../internals/z
       typescript: 5.0.0-beta
 
 packages:
@@ -2673,10 +2661,6 @@ packages:
 
   /tslib/1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
-    dev: false
-
-  /tslib/2.5.0:
-    resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
     dev: false
 
   /tsup/6.6.3_typescript@5.0.0-beta:
