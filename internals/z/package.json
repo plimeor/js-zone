@@ -9,14 +9,15 @@
   },
   "scripts": {
     "_phase:build": "rushx build",
+    "_phase:lint": "rushx lint",
     "build": "tsup src/index.ts --format cjs --target es2022",
     "lint": "./z lint"
   },
   "dependencies": {
+    "@mobily/ts-belt": "~3.13.1",
     "@rushstack/ts-command-line": "~4.13.2",
     "eslint": "~8.34.0",
     "eslint-formatter-pretty": "~4.1.0",
-    "tslib": "~2.5.0",
     "tsup": "~6.6.3"
   },
   "devDependencies": {

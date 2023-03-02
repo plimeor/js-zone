@@ -7,7 +7,7 @@
       "outputFolderNames": ["dist", "lib"]
     },
     {
-      "operationName": "lint",
+      "operationName": "_phase:lint",
       "outputFolderNames": [".eslintcache"]
     }
   ]

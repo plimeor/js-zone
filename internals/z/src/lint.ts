@@ -1,3 +1,4 @@
+import { F, N } from '@mobily/ts-belt'
 import { CommandLineAction } from '@rushstack/ts-command-line'
 import { ESLint } from 'eslint'
 import formatter from 'eslint-formatter-pretty'
@@ -23,12 +24,11 @@ export class LintAction extends CommandLineAction {
     const results = await eslint.lintFiles('src/**/*')
     const meta = await eslint.getRulesMetaForResults(results)
     const output = formatter(results as any, { rulesMeta: meta })
-    let errorCount = 0
-    for (const result of results) {
-      errorCount += result.errorCount - result.fixableErrorCount
-    }
-    if (errorCount > 0) {
+    const errorCount = results.reduce((count, result) => count + result.errorCount - result.fixableErrorCount, 0)
+
+    F.when(errorCount, N.gt(0), () => {
+      // eslint-disable-next-line functional/no-throw-statements
       throw new Error(output)
-    }
+    })
   }
 }

@@ -2,10 +2,21 @@
 require('@rushstack/eslint-config/patch/modern-module-resolution')
 
 module.exports = {
+  env: {
+    es2022: true
+  },
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: './tsconfig.json'
+  },
   parser: '@typescript-eslint/parser',
-  extends: 'plugin:unicorn/recommended',
-  ignorePatterns: ['.eslintrc.js'],
-  rules: {
-    'unicorn/prefer-top-level-await': 'off'
-  }
+  plugins: ['@typescript-eslint', 'unicorn', 'functional'],
+  extends: [
+    'plugin:unicorn/recommended',
+    'plugin:functional/strict',
+    'plugin:functional/external-typescript-recommended',
+    'plugin:functional/stylistic'
+  ],
+  ignorePatterns: ['.eslintrc.js']
 }

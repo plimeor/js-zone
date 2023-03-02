@@ -14,4 +14,4 @@ export class ZoneCommand extends CommandLineParser {
   }
 }
 
-new ZoneCommand().execute().catch(console.error)
+new ZoneCommand().execute()

@@ -7,6 +7,14 @@
 
   "phases": [
     {
+      "name": "_phase:lint",
+      "dependencies": {
+        "upstream": ["_phase:build"]
+      },
+      "ignoreMissingScript": true,
+      "allowWarningsOnSuccess": false
+    },
+    {
       "name": "_phase:build",
       "dependencies": {
         "upstream": ["_phase:build"]
@@ -42,14 +50,16 @@
       }
     },
     {
-      "commandKind": "bulk",
+      "commandKind": "phased",
       "name": "lint",
       "summary": "Lint all projects.",
-      "description": "This command invokes ESLint to lint all projects.",
+      "phases": ["_phase:lint"],
       "enableParallelism": true,
-      "ignoreMissingScript": true,
-      "ignoreDependencyOrder": true,
-      "safeForSimultaneousRushProcesses": true
+      "incremental": true,
+      "watchOptions": {
+        alwaysWatch: false,
+        watchPhases: ["_phase:lint"]
+      }
     },
     {
       "commandKind": "phased",

@@ -7,10 +7,10 @@ import {
 import * as tsup from 'tsup'
 
 export class BuildAction extends CommandLineAction {
-  #src!: CommandLineStringParameter
-  #watch!: CommandLineFlagParameter
-  #dts!: CommandLineFlagParameter
-  #externals!: CommandLineStringListParameter
+  private entryFiles!: CommandLineStringParameter
+  private watch!: CommandLineFlagParameter
+  private declaration!: CommandLineFlagParameter
+  private externals!: CommandLineStringListParameter
 
   public constructor() {
     super({
@@ -20,41 +20,42 @@ export class BuildAction extends CommandLineAction {
     })
   }
 
+  protected override onDefineParameters(): void {
+    this.entryFiles = this.defineStringParameter({
+      argumentName: 'PATH',
+      parameterLongName: '--src',
+      description: 'Entry files'
+    })
+
+    this.declaration = this.defineFlagParameter({
+      parameterLongName: '--dts',
+      description: 'Whether to generate declaration files'
+    })
+
+    this.watch = this.defineFlagParameter({
+      parameterLongName: '--watch',
+      parameterShortName: '-w',
+      description: 'Whether to watch files'
+    })
+
+    // eslint-disable-next-line functional/immutable-data
+    this.externals = this.defineStringListParameter({
+      argumentName: 'EXTERNALS',
+      parameterLongName: '--external',
+      description: 'Modules to exclude from the bundle'
+    })
+  }
+
   protected override onExecute(): Promise<void> {
     return tsup.build({
       target: 'es2020',
       format: ['esm', 'cjs'],
-      entry: [this.#src.value ?? 'src/index.ts'],
-      dts: this.#dts.value,
-      watch: this.#watch.value,
-      minify: !this.#watch.value,
+      entry: [this.entryFiles.value ?? 'src/index.ts'],
+      dts: this.declaration.value,
+      watch: this.watch.value,
+      minify: !this.watch.value,
       sourcemap: true,
-      external: ['esbuild', ...this.#externals.values]
-    })
-  }
-
-  protected override onDefineParameters(): void {
-    this.#src = this.defineStringParameter({
-      argumentName: 'PATH',
-      parameterLongName: '--src',
-      description: 'Source file'
-    })
-
-    this.#dts = this.defineFlagParameter({
-      parameterLongName: '--dts',
-      description: 'Generate dts files'
-    })
-
-    this.#watch = this.defineFlagParameter({
-      parameterLongName: '--watch',
-      parameterShortName: '-w',
-      description: 'Watch files change'
-    })
-
-    this.#externals = this.defineStringListParameter({
-      argumentName: 'EXTERNALS',
-      parameterLongName: '--external',
-      description: 'External dependencies'
+      external: ['esbuild', ...this.externals.values]
     })
   }
 }
